@@ -1,5 +1,14 @@
-import { ConnectButton } from 'web3uikit'
+import React, { useContext } from 'react'
+import logo from '../assets/amazon_logo.png'
+import logoFull from '../assets/amazon_logo_full.png'
 import Image from 'next/image'
+import { FaBox } from 'react-icons/fa'
+import { BsFillBookmarkFill } from 'react-icons/bs'
+import { BsFillPersonFill } from 'react-icons/bs'
+// import { AmazonContext } from '../context/AmazonContext'
+import { ConnectButton } from 'web3uikit'
+import { AiOutlineHistory } from 'react-icons/ai'
+import Link from 'next/link'
 
 const styles = {
     container: `h-full w-[300px] flex flex-col bg-[#fff] static`,
@@ -61,7 +70,48 @@ function Sidebar() {
                         )}
                     </>
                 )}
+                <div className={styles.ConnectButton}>
+                    <ConnectButton />
+                </div>
             </div>
+            <div className={styles.menu}>
+                <Link href="/">
+                    <div className={styles.menuItem}>
+
+                        <Image
+                            src={logo}
+                            height={30}
+                            width={30}
+                            className={styles.amazonLogo}
+                        />
+                        My Amazon <br />
+                        board
+                    </div>
+                </Link>
+                <div className={styles.menuItem}>
+                    <FaBox />
+                    Collections
+                </div>
+                <div className={styles.menuItem}>
+                    <BsFillBookmarkFill />
+                    Saved
+                </div>
+                <div className={styles.menuItem}>
+                    <BsFillPersonFill />
+                    Profile
+                </div>
+                <Link href='/history'>
+                    <div className={styles.menuItem}>
+                        <AiOutlineHistory />
+                        Transaction History
+                    </div>
+                </Link>
+            </div>
+            <div className={styles.companyName}>
+                <Image src={logoFull} alt='amazon' height={100} width={100} />
+            </div>
+
+
         </div>
     )
 }
