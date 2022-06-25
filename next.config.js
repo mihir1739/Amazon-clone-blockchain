@@ -11,7 +11,8 @@
       'media3.giphy.com',
       'media2.giphy.com',
       'media4.giphy.com',
-      'images.unsplash.com'
+      'images.unsplash.com',
+      'www.pinkvilla.com'
     ],
   },
 }

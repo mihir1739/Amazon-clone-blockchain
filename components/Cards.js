@@ -5,6 +5,8 @@ import { AmazonContext } from '../context/AmazonContext'
 
 function Cards() {
 
+    const { assets } = useContext(AmazonContext);
+
     const item = {
         id: 0,
         attributes: {
@@ -19,12 +21,19 @@ function Cards() {
         title: `text-xl font-bolder mb-[20px] mt-[30px]  ml-[30px]`,
         cards: `flex items-center  flex-wrap gap-[80px]`,
     }
+    console.log(" cards", assets);
 
     return (
         <div className={styles.container}>
             <div className={styles.title}>New Release</div>
             <div className={styles.cards}>
+                {
+                    assets.map((item, index) => {
+                        return <Card key={item.id} item={item.attributes} />
+                    })
+                }
                 <Card key={item.id} item={item.attributes} />
+
             </div>
         </div>
     )
