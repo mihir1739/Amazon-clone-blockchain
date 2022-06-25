@@ -16,7 +16,7 @@ const styles = {
 function Main() {
     return (
         <div className={styles.container}>
-            {/* <Header /> */}
+            <Header />
             {/* <Featured /> */}
             <Cards />
             {/* {recentTransactions.length > 0 && (

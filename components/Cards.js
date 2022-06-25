@@ -32,7 +32,6 @@ function Cards() {
                         return <Card key={item.id} item={item.attributes} />
                     })
                 }
-                <Card key={item.id} item={item.attributes} />
 
             </div>
         </div>
